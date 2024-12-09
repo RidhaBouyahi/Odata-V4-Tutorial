@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "https://services.odata.org/TripPinRESTierService/(S(id))/",
+        "uri": "/TripPinRESTierService/(S(id))/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -56,7 +56,7 @@
       "compact": true,
       "cozy": true
     },
-    "handleValidation": true,
+    "handleValidation": true ,
     "models": {
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",

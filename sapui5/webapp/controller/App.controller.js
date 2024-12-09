@@ -13,6 +13,18 @@ sap.ui.define([
             };
             var oModel = new JSONModel(oJSONData) ;
             this.getView().setModel(oModel,"appView")
-        }
+        },
+        _getText : function (sTextId,aArgs) {
+            return this.getOwnerComponent().getModel("i18n").getResourceBundle().getText(sTextId,aArgs);
+        },
+        onRefresh : function () {
+            var oBinding = this.byId("peopleList").getBinding("items");
+            if (oBinding.hasPendingChanges())
+            {
+                MessageBox.error(this._getText("refreshNotPossibleMessage"));
+            }
+            oBinding.refresh();
+            MessageToast.show(this._getText("refreshSuccessMessage"))
+            }
     });
 });
